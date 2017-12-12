@@ -6,6 +6,6 @@ template {
 }
 
 exec {
-  command = "postfix -c /etc/postfix/main.cf"
+  command = "postfix -c /etc/postfix"
   splay = "30s"
 }
