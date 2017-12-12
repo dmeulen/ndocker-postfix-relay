@@ -17,3 +17,8 @@ readme_directory = /usr/share/doc/postfix/readme
 inet_protocols = ipv4
 meta_directory = /etc/postfix
 shlib_directory = /usr/lib/postfix
+
+myhostname = {{ env "POSTFIX_MYHOSTNAME" }}
+relayhost = {{ env "POSTFIX_RELAYHOST" }}
+mynetworks = {{ env "POSTFIX_MYNETWORKS" }}
+smtpd_relay_restrictions = {{ env "POSTFIX_SMTPD_RELAY_RESTRICTIONS" }}
