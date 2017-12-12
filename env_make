@@ -1,6 +1,8 @@
 PORTS = \
   --publish 25:25 \
 
-VOLUMES = \
-  --volume /var/log/docker:/var/log \
-  --volume /tmp/docker-data:/srv
+ENV = \
+  -e POSTFIX_MYHOSTNAME="xxx.anna.lan" \
+  -e POSTFIX_RELAYHOST="192.168.1.191" \
+  -e POSTFIX_MYNETWORKS="192.168.1.0/24" \
+  -e POSTFIX_SMTPD_RELAY_RESTRICTIONS="permit_mynetworks,reject_unauth_destination"
