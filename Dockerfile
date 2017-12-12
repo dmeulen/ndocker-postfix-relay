@@ -7,7 +7,7 @@ ENV \
   ALPINE_VERSION="v3.6" \
   CONSUL_TEMPLATE_VERSION=0.19.4 \
   APK_ADD_TEMP="" \
-  APK_ADD_PERM="postfix"
+  APK_ADD_PERM="postfix busybox"
 
 EXPOSE 10024
 
