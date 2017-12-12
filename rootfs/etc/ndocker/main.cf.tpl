@@ -1,3 +1,4 @@
+smtputf8_enable = no
 compatibility_level = 2
 queue_directory = /var/spool/postfix
 command_directory = /usr/sbin
