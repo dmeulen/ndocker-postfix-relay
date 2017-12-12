@@ -1,0 +1,6 @@
+PORTS = \
+  --publish 25:25 \
+
+VOLUMES = \
+  --volume /var/log/docker:/var/log \
+  --volume /tmp/docker-data:/srv
