@@ -12,4 +12,4 @@ POSTFIX_CLIENT_SASL_ENABLED | set to `true` or `false` |
 SASL_GATEWAY | your sasl enabled relay host |
 SASL_USERNAME | sasl username |
 SASL_PASSWD | sasl password |
-NOMAD_PORT_smtp | mapped port provided by nomad | **Nomad will assign this for you**. It will use the default smtp port if not provided by Nomad.
+NOMAD_PORT_smtp | mapped port provided by nomad | **Nomad will assign this for you when correctly configured**. It will use the default smtp port if not provided by Nomad.
