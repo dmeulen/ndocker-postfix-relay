@@ -22,6 +22,9 @@ clean:
 shell:
 	docker run \
 		-it \
+		$(PORTS) \
+		$(VOLUMES) \
+		$(ENV) \
 		$(NS)/$(REPO) \
 		sh
 

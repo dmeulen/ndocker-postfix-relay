@@ -2,6 +2,10 @@ PORTS = \
   --publish 25:25 \
 
 ENV = \
+  -e POSTFIX_CLIENT_SASL_ENABLED="true" \
+  -e SASL_GATEWAY="[lala.anna.lan]" \
+  -e SASL_USERNAME="user" \
+  -e SASL_PASSWD="password" \
   -e POSTFIX_MYHOSTNAME="xxx.anna.lan" \
   -e POSTFIX_RELAYHOST="192.168.1.191" \
   -e POSTFIX_MYNETWORKS="192.168.1.0/24 172.17.0.0/16" \
