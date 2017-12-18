@@ -6,6 +6,13 @@ if [ $POSTFIX_CLIENT_SASL_ENABLED == "true" ]; then
   chmod 640 /etc/postfix/sasl_passwd*
 fi
 
+if test $POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS; then
+  for domain in $POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS; do
+    echo "$domain OK" >> /etc/postfix/allowed_recipent_domains
+  done
+  postmap /etc/postfix/allowed_recipent_domains
+fi
+
 if test $NOMAD_PORT_smtp; then
   export SMTP_PORT=$NOMAD_PORT_smtp
 else
