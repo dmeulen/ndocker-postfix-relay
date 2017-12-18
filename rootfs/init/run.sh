@@ -6,9 +6,9 @@ if [ $POSTFIX_CLIENT_SASL_ENABLED == "true" ]; then
   chmod 640 /etc/postfix/sasl_passwd*
 fi
 
-if test "$POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS"; then
+if test "$POSTFIX_ALLOWED_RECIPIENT_DOMAINS"; then
   > /etc/postfix/allowed_recipient_domains
-  for domain in $POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS; do
+  for domain in $POSTFIX_ALLOWED_RECIPIENT_DOMAINS; do
     echo "$domain OK" >> /etc/postfix/allowed_recipient_domains
   done
   postmap /etc/postfix/allowed_recipient_domains

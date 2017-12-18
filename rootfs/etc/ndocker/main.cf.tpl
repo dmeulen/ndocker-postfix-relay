@@ -23,7 +23,7 @@ myhostname = {{ env "POSTFIX_MYHOSTNAME" }}
 relayhost = {{ env "POSTFIX_RELAYHOST" }}
 mynetworks = {{ env "POSTFIX_MYNETWORKS" }}
 smtpd_relay_restrictions = {{ env "POSTFIX_SMTPD_RELAY_RESTRICTIONS" }}
-{{- $smtpd_recipient_restrictions := env "POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS" }}
+{{- $smtpd_recipient_restrictions := env "POSTFIX_ALLOWED_RECIPIENT_DOMAINS" }}
 {{- if ne $smtpd_recipient_restrictions "" }}
 smtpd_recipient_restrictions = check_recipient_access hash:/etc/postfix/allowed_recipient_domains, reject
 {{- end }}

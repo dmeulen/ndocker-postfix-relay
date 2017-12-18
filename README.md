@@ -8,7 +8,7 @@ POSTFIX_MYDOMAIN | your domain name |
 POSTFIX_MYNETWORKS | what networks are allowed to send mail |
 POSTFIX_RELAYHOST | where to relay mail |
 POSTFIX_SMTPD_RELAY_RESTRICTIONS | your relay restrictions |
-POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS | a space separated list of allowed reciepient domains | e.g. "example.com ebay.com hashicorp.com"
+POSTFIX_ALLOWED_RECIPIENT_DOMAINS | a space separated list of allowed reciepient domains | e.g. "example.com ebay.com hashicorp.com"
 POSTFIX_CLIENT_SASL_ENABLED | set to `true` or `false` |
 SASL_GATEWAY | your sasl enabled relay host |
 SASL_USERNAME | sasl username |
