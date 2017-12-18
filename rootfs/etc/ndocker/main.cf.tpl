@@ -24,7 +24,7 @@ relayhost = {{ env "POSTFIX_RELAYHOST" }}
 mynetworks = {{ env "POSTFIX_MYNETWORKS" }}
 smtpd_relay_restrictions = {{ env "POSTFIX_SMTPD_RELAY_RESTRICTIONS" }}
 {{ $smtpd_recipient_restrictions := env "POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS" }}
-{{ if $smtpd_recipient_restrictions != "" }}
+{{ if ne $smtpd_recipient_restrictions "" }}
 smtpd_recipient_restrictions = check_recipient_access hash:/etc/postfix/allowed_recipient_domains, reject
 {{ end }}
 {{ $client_sasl_enabled := env "POSTFIX_CLIENT_SASL_ENABLED" }}

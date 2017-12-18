@@ -6,11 +6,12 @@ if [ $POSTFIX_CLIENT_SASL_ENABLED == "true" ]; then
   chmod 640 /etc/postfix/sasl_passwd*
 fi
 
-if test $POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS; then
+if test "$POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS"; then
+  > /etc/postfix/allowed_recipient_domains
   for domain in $POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS; do
-    echo "$domain OK" >> /etc/postfix/allowed_recipent_domains
+    echo "$domain OK" >> /etc/postfix/allowed_recipient_domains
   done
-  postmap /etc/postfix/allowed_recipent_domains
+  postmap /etc/postfix/allowed_recipient_domains
 fi
 
 if test $NOMAD_PORT_smtp; then
