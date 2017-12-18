@@ -9,4 +9,5 @@ ENV = \
   -e POSTFIX_MYHOSTNAME="xxx.anna.lan" \
   -e POSTFIX_RELAYHOST="192.168.1.191" \
   -e POSTFIX_MYNETWORKS="192.168.1.0/24 172.17.0.0/16" \
-  -e POSTFIX_SMTPD_RELAY_RESTRICTIONS="permit_mynetworks,reject_unauth_destination"
+  -e POSTFIX_SMTPD_RELAY_RESTRICTIONS="permit_mynetworks,reject_unauth_destination" \
+  -e POSTFIX_SMTPD_RECIPIENT_RESTRICTIONS="example.com nu.nl hashicorp.com"
